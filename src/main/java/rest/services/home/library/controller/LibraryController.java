@@ -143,7 +143,20 @@ public class LibraryController {
 		myLibrary.saveAll(books);
 		
 		return ResponseEntity.ok().body("Saved all of the books in MyLibrary");
+	}
+	
+	@GetMapping("/insertBatchWishList")
+	public ResponseEntity<String> insertBatchWishList(){
 		
-		//return ResponseEntity.ok().body(borrowedBooks);
+		MyWishList wishList1 = new MyWishList("The Gambler", "Dostoevsky", "English", "Roman", 500, false);
+		MyWishList wishList2 = new MyWishList("Humiliated and Insulter", "Dostoevsky", "English", "Roman", 500, true);
+		MyWishList wishList3 = new MyWishList("Crime and Punishment", "Dostoevsky", "English", "Roman", 500, true);
+		MyWishList wishList4 = new MyWishList("Demons", "Dostoevsky", "English", "Roman", 500, false);
+					
+		List<MyWishList> books = Arrays.asList(wishList1, wishList2, wishList3, wishList4);
+		
+		wishList.saveAll(books);
+		
+		return ResponseEntity.ok().body("Saved all of the books in MyWishList");
 	}
 }

@@ -10,28 +10,43 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "WishList")
 public class MyWishList {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	@Column
 	private String name;
-	
+
 	@Column
 	private String author;
-	
+
 	@Column
 	private String language;
-	
+
 	@Column
 	private String genre;
-	
+
 	@Column
 	private Integer numPages;
-	
+
 	@Column
 	private Boolean status;
+
+	public MyWishList() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public MyWishList(String name, String author, String language, String genre, Integer numPages, Boolean status) {
+		super();
+		this.name = name;
+		this.author = author;
+		this.language = language;
+		this.genre = genre;
+		this.numPages = numPages;
+		this.status = status;
+	}
 
 	public Boolean getStatus() {
 		return status;
