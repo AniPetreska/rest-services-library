@@ -44,7 +44,7 @@ public class LibraryController {
 	@PostMapping("/myLibrary")
 	public ResponseEntity<String> insertIntoMyLibrary(@Valid @RequestBody MyLibrary books) {
 		myLibrary.save(books);
-		return ResponseEntity.ok().body("Succesfully inserted");
+		return ResponseEntity.ok().body("Successfully inserted");
 	}
 	
 	@PostMapping("/wishList")
